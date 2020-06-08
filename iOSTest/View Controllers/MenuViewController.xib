@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="iOSTest" customModuleProvider="target">
             <connections>
+                <outlet property="animationButton" destination="jya-WD-Yn8" id="Eoe-K0-Y44"/>
+                <outlet property="chatButton" destination="Tqi-Rn-KSl" id="fRw-7j-Gu4"/>
+                <outlet property="loginButton" destination="ydM-uD-f5n" id="ABW-Ga-7wM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,33 +20,82 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqi-Rn-KSl">
-                    <rect key="frame" x="171" y="241" width="33" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Chat"/>
-                    <connections>
-                        <action selector="chat:" destination="-1" eventType="touchUpInside" id="BSN-ed-RxJ"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jya-WD-Yn8">
-                    <rect key="frame" x="153" y="346" width="69" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Animation"/>
-                    <connections>
-                        <action selector="animation:" destination="-1" eventType="touchUpInside" id="qr9-B1-Qea"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydM-uD-f5n">
-                    <rect key="frame" x="168" y="291" width="38" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Login"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_home_menu" translatesAutoresizingMaskIntoConstraints="NO" id="mmH-GV-5tF">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydM-uD-f5n">
+                    <rect key="frame" x="30" y="306" width="315" height="55"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="ghl-Eh-bjO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <inset key="titleEdgeInsets" minX="-180" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="-200" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="LOGIN" image="ic_login">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="login:" destination="-1" eventType="touchUpInside" id="4UX-2a-upP"/>
                     </connections>
                 </button>
+                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqi-Rn-KSl">
+                    <rect key="frame" x="30" y="227" width="315" height="55"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="fhJ-QN-5Xc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <inset key="titleEdgeInsets" minX="-180" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="-200" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="CHAT" image="ic_chat">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="chat:" destination="-1" eventType="touchUpInside" id="BSN-ed-RxJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jya-WD-Yn8">
+                    <rect key="frame" x="30" y="385" width="315" height="55"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="lUy-wH-9vr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <inset key="titleEdgeInsets" minX="-156" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="-172" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Animation" image="ic_animation">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="animation:" destination="-1" eventType="touchUpInside" id="qr9-B1-Qea"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="552.17391304347825" y="313.39285714285711"/>
+            <constraints>
+                <constraint firstItem="mmH-GV-5tF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4vx-9L-MUI"/>
+                <constraint firstItem="mmH-GV-5tF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CDP-Eq-Fez"/>
+                <constraint firstItem="jya-WD-Yn8" firstAttribute="top" secondItem="ydM-uD-f5n" secondAttribute="bottom" constant="24" id="EfY-vo-GuA"/>
+                <constraint firstItem="ydM-uD-f5n" firstAttribute="top" secondItem="Tqi-Rn-KSl" secondAttribute="bottom" constant="24" id="Ky9-jO-llN"/>
+                <constraint firstItem="jya-WD-Yn8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="RlV-Hh-NP8"/>
+                <constraint firstItem="Tqi-Rn-KSl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="227" id="UZz-qN-3d8"/>
+                <constraint firstAttribute="bottom" secondItem="jya-WD-Yn8" secondAttribute="bottom" constant="227" id="XHo-7d-Wd0"/>
+                <constraint firstItem="ydM-uD-f5n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Yxl-zv-MTn"/>
+                <constraint firstAttribute="trailing" secondItem="Tqi-Rn-KSl" secondAttribute="trailing" constant="30" id="b2T-xL-CjM"/>
+                <constraint firstAttribute="bottom" secondItem="mmH-GV-5tF" secondAttribute="bottom" id="j4g-4d-Vcn"/>
+                <constraint firstAttribute="trailing" secondItem="ydM-uD-f5n" secondAttribute="trailing" constant="30" id="mKv-Rc-OcO"/>
+                <constraint firstAttribute="trailing" secondItem="jya-WD-Yn8" secondAttribute="trailing" constant="30" id="oB1-DL-DGF"/>
+                <constraint firstAttribute="trailing" secondItem="mmH-GV-5tF" secondAttribute="trailing" id="pTF-hg-p5m"/>
+                <constraint firstItem="Tqi-Rn-KSl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="qGg-Ec-Kz3"/>
+            </constraints>
+            <point key="canvasLocation" x="551.20000000000005" y="312.59370314842579"/>
         </view>
     </objects>
+    <resources>
+        <image name="bg_home_menu" width="375" height="667"/>
+        <image name="ic_animation" width="23" height="24"/>
+        <image name="ic_chat" width="24" height="24"/>
+        <image name="ic_login" width="24" height="24"/>
+    </resources>
 </document>

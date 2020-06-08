@@ -24,11 +24,20 @@ class MenuViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var chatButton: UIButton!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var animationButton: UIButton!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        navigationItem.title = "Coding Tasks"
+        chatButton.layer.cornerRadius = 8
+        loginButton.layer.cornerRadius = 8
+        animationButton.layer.cornerRadius = 8
         
     }
     
@@ -38,8 +47,14 @@ class MenuViewController: UIViewController {
         let chatViewController = ChatViewController()
         navigationController?.pushViewController(chatViewController, animated: true)
     }
+    
     @IBAction func login(_ sender: UIButton) {
+        let loginViewController = LoginViewController()
+        navigationController?.pushViewController(loginViewController, animated: true)
     }
+    
     @IBAction func animation(_ sender: UIButton) {
+        let animationViewController = AnimationViewController()
+        navigationController?.pushViewController(animationViewController, animated: true)
     }
 }
