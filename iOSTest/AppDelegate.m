@@ -5,6 +5,7 @@
 
 #import "AppDelegate.h"
 #import "iOSTest-Swift.h"
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface AppDelegate ()
 @property (nonatomic, strong) UINavigationController *navController;
@@ -22,6 +23,9 @@
     
     self.navController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
     
+    UINavigationBar.appearance.barTintColor = UIColorFromRGB(0x0E5C89);
+    UINavigationBar.appearance.tintColor = UIColor.whiteColor;
+    //UINavigationBar.appearance.titleTextAttributes =
     // Use Objective-C if you plan to code in the app delegate
     
     self.window.rootViewController = self.navController;
