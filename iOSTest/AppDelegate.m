@@ -22,11 +22,19 @@
     MenuViewController *mainMenuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     
     self.navController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
+<<<<<<< Updated upstream
     
     UINavigationBar.appearance.barTintColor = UIColorFromRGB(0x0E5C89);
     UINavigationBar.appearance.tintColor = UIColor.whiteColor;
     //UINavigationBar.appearance.titleTextAttributes =
+=======
+        
+>>>>>>> Stashed changes
     // Use Objective-C if you plan to code in the app delegate
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x0E5C89)];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:
+    @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     self.window.rootViewController = self.navController;
 
