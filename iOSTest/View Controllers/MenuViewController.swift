@@ -25,9 +25,7 @@ class MenuViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var chatButton: UIButton!
-    
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var animationButton: UIButton!
     
     // MARK: - Lifecycle
@@ -35,10 +33,7 @@ class MenuViewController: UIViewController {
         
         super.viewDidLoad()
         navigationItem.title = "Coding Tasks"
-        chatButton.layer.cornerRadius = 8
-        loginButton.layer.cornerRadius = 8
-        animationButton.layer.cornerRadius = 8
-        
+        buttonStyle()
     }
     
     // MARK: - Actions
@@ -56,5 +51,11 @@ class MenuViewController: UIViewController {
     @IBAction func animation(_ sender: UIButton) {
         let animationViewController = AnimationViewController()
         navigationController?.pushViewController(animationViewController, animated: true)
+    }
+    
+    func buttonStyle() {
+        chatButton.layer.cornerRadius = 8
+        loginButton.layer.cornerRadius = 8
+        animationButton.layer.cornerRadius = 8
     }
 }
