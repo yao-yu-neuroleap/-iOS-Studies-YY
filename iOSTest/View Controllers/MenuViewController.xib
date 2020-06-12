@@ -67,7 +67,7 @@
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             <inset key="titleEdgeInsets" minX="-156" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="-172" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Animation" image="ic_animation">
+                            <state key="normal" title="ANIMATION" image="ic_animation">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
