@@ -32,7 +32,7 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        navigationItem.title = "Coding Tasks"
+        navigationItemStyle()
         buttonStyle()
     }
     
@@ -57,5 +57,10 @@ class MenuViewController: UIViewController {
         chatButton.layer.cornerRadius = 8
         loginButton.layer.cornerRadius = 8
         animationButton.layer.cornerRadius = 8
+    }
+    
+    func navigationItemStyle() {
+        navigationItem.title = "Coding Tasks"
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 }
